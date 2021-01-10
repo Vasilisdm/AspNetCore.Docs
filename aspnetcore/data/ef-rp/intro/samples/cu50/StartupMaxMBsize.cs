@@ -23,9 +23,6 @@ namespace ContosoUniversity
         public void ConfigureServices(IServiceCollection services)
         {
             int MyMaxModelBindingCollectionSize = 100;
-            Int32.TryParse(Configuration["MyMaxModelBindingCollectionSize"],
-                                       out MyMaxModelBindingCollectionSize);
-            
             services.Configure<MvcOptions>(options => 
                    options.MaxModelBindingCollectionSize = MyMaxModelBindingCollectionSize);
 
